@@ -34,11 +34,11 @@ pip install -r requirements.txt
 
 ## 4. Første gang du kører programmet
 
-python main.py --key DIN_API_KEY
+python valuta.py --key DIN_API_KEY
 
 ## 5. Brug programmet
 
-python main.py
+python valuta.py
 
 Vælg en af de tilgænglige valutaer
 
