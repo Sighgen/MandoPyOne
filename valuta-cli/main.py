@@ -53,7 +53,13 @@ print("1 USD")
 print("2 DKK")
 print("3 EUR")
 
-to_choice = input[choice]
+to_choice = input("Til valuta: ")
+
+if to_choice not in currency_choice:
+    print("Findes ikke!")
+    exit()
+
+to_currency = currency_choice[to_choice]
 
 try:
     amount = float(input("beløb: "))
@@ -62,7 +68,7 @@ except ValueError:
     exit()
 
 # API kald
-url = f"https://v6.exchangerate-api.com/v6/{api_key}/latest/{from_curency}"
+url = f"https://v6.exchangerate-api.com/v6/{api_key}/latest/{from_currency}"
 
 response = requests.get(url)
 data = response.json()
@@ -74,4 +80,4 @@ if data["result"] != "success":
 rate = data["conversion_rates"][to_currency]
 result = amount * rate
 
-print(f"{amount} {from_currency} = {result:.2f} to_currency")    
+print(f"{amount} {from_currency} = {result:.2f} {to_currency}")    
