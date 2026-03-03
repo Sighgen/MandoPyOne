@@ -45,3 +45,7 @@ Vælg en af de tilgænglige valutaer
 Indtast beløb
 
 Programmet viser omregningen.
+
+## 6 Exit venv
+
+deactivate
