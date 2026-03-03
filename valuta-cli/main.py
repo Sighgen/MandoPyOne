@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 
 # Indlæs .env
-load_dotenv
+load_dotenv()
 
 parser = argparse.ArgumentParser(description="Valuta CLI Tool")
 
@@ -28,18 +28,46 @@ if not api_key:
     print("Ingen API key fundet!")
     exit()
 
-# Bruger input
-from_currency = input("Fra valuta: ").upper()
-to_currency = input("Til valuta: ").upper()
-amount = float(input("Beløb: "))
+# Valg af valuta
+currency_choice = {
+    "1": "USD",
+    "2": "DKK",
+    "3": "EUR"
+}
+
+print("\nVælg valuta: ")
+print("1, USD")
+print("2 DKK")
+print("3. EUR")
+
+choice = input("Valg: ")
+
+if choice not in currency_choice:
+    print("Findes ikke!")
+    exit()
+
+from_currency = currency_choice[choice]
+
+print("\nTil valuta: ")
+print("1 USD")
+print("2 DKK")
+print("3 EUR")
+
+to_choice = input[choice]
+
+try:
+    amount = float(input("beløb: "))
+except ValueError:
+    print("Beløb skal være et tal")
+    exit()
 
 # API kald
-url = f"https://v6.exchangerate-api.com/v6/{api_key}/latest/from_curency"
+url = f"https://v6.exchangerate-api.com/v6/{api_key}/latest/{from_curency}"
 
 response = requests.get(url)
 data = response.json()
 
-if data["result"] != "succes":
+if data["result"] != "success":
     print("Fejl i API kald.")
     exit()
 
