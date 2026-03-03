@@ -8,7 +8,11 @@ Et simpelt command line værktøj til valutaomregning.
 ## 1. Klon projektet
 
 git clone <repo-url>
-cd MandoPyOne/valuta-cli # Hvis ikke det virker så
+
+cd MandoPyOne/valuta-cli 
+
+Hvis kommandoen over ikke virker så brug den under!
+
 cd MandoPyOne
 cd valuta-cli
 
