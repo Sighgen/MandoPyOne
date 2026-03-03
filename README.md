@@ -13,7 +13,7 @@ cd MandoPyOne/valuta-cli
 
 Hvis kommandoen over ikke virker så brug den under!
 
-cd MandoPyOne
+cd MandoPyOne 
 cd valuta-cli
 
 ## 2. Opret virtual environment
